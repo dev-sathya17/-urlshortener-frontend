@@ -86,10 +86,12 @@ const Login = () => {
           )}
         </div>
         <div className="button-container">
+          <button className="signup-button" type="submit">
+            SIGN IN
+          </button>
           <p>
             Do not have an Account? <span>Sign Up</span>
           </p>
-          <button type="submit">SIGN IN</button>
         </div>
       </form>
     </div>

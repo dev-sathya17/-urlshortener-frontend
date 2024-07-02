@@ -104,30 +104,36 @@ const Register = () => {
           />
         </div>
 
-        <div className="input-container">
-          <FaLock className="icon" />
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            id="password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            placeholder="Password:"
-          />
-          {showPassword ? (
-            <IoMdEye className="eye-icon" onClick={togglePassword} />
-          ) : (
-            <IoMdEyeOff className="eye-icon" onClick={togglePassword} />
-          )}
+        <div className="password-container">
+          <div className="input-container">
+            <FaLock className="icon" />
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              id="password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              placeholder="Password:"
+            />
+          </div>
+          <div className="password-icon-container">
+            {showPassword ? (
+              <IoMdEye className="eye-icon" onClick={togglePassword} />
+            ) : (
+              <IoMdEyeOff className="eye-icon" onClick={togglePassword} />
+            )}
+          </div>
         </div>
         <div className="button-container">
+          <button type="submit" className="signup-button">
+            SIGN UP
+          </button>
           <p>
             Already have an account?{" "}
             <span>
               <Link to="/login">Sign In</Link>
             </span>
           </p>
-          <button type="submit">SIGN UP</button>
         </div>
       </form>
     </div>
