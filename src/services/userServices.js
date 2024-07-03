@@ -1,4 +1,4 @@
-import { instance } from "./instance";
+import { instance, protectedInstance } from "./instance";
 
 const userServices = {
   // API Call to register a user
@@ -28,6 +28,15 @@ const userServices = {
       { withCredentials: true }
     );
   },
+
+  // Logout
+  logout: async () => {
+    return await protectedInstance.get(
+      "/users/logout",
+      {},
+      { withCredentials: true }
+    );
+  },
   forgot: async (email) => {
     return await instance.post("/users/forgot", { email });
   },
@@ -36,6 +45,18 @@ const userServices = {
   },
   reset: async (email, password) => {
     return await instance.post("/users/reset", { email, password });
+  },
+  getProfile: async () => {
+    try {
+      const user = await protectedInstance.get(
+        `/users/profile`,
+        {},
+        { withCredentials: true }
+      );
+      return user;
+    } catch (error) {
+      return null;
+    }
   },
 };
 

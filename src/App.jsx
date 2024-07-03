@@ -3,14 +3,20 @@ import "./App.css";
 import Register from "./pages/Register";
 import ActivateAccount from "./pages/ActivateAccount";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Dashboard, { userLoader } from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import Verify from "./pages/Verify";
+import ViewURLs, { urlLoader } from "./pages/ViewURLs";
+import Redirect from "./pages/Redirect";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Register />,
+  },
+  {
+    path: "/:identifier",
+    element: <Redirect />,
   },
   {
     path: "/users/activate/:id",
@@ -23,6 +29,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+    loader: userLoader,
   },
   {
     path: "/forgot",
@@ -31,6 +38,11 @@ const router = createBrowserRouter([
   {
     path: "/verify/:authString",
     element: <Verify />,
+  },
+  {
+    path: "/view",
+    element: <ViewURLs />,
+    loader: urlLoader,
   },
 ]);
 

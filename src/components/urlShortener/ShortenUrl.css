@@ -1,0 +1,41 @@
+.title {
+  background-color: #2563eb;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.shorten-button {
+  all: unset;
+  margin-top: 25px;
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input {
+  border: 0;
+  /* flex: 1; */
+  height: 2rem;
+  padding: 0.5rem;
+  border-bottom: 2px solid rgb(200, 200, 200);
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: rgb(0, 140, 255);
+  outline: none;
+}

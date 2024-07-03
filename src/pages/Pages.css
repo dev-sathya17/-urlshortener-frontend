@@ -73,6 +73,10 @@ input:focus {
   outline: none;
 }
 
+.table {
+  margin-top: 50px;
+}
+
 .button-container {
   display: flex;
   flex-direction: column;
