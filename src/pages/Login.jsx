@@ -7,7 +7,7 @@ import { FaLock } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import userServices from "../services/userServices";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const validate = (values) => {
   const errors = {};
   if (!values.email) {
@@ -90,7 +90,16 @@ const Login = () => {
             SIGN IN
           </button>
           <p>
-            Do not have an Account? <span>Sign Up</span>
+            Forgot Password?{" "}
+            <span>
+              <Link to="/forgot">Click Here</Link>
+            </span>
+          </p>
+          <p>
+            Do not have an Account?{" "}
+            <span>
+              <Link to="/">Sign Up</Link>
+            </span>
           </p>
         </div>
       </form>
