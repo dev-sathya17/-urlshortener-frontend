@@ -7,16 +7,11 @@ import Dashboard, { userLoader } from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import Verify from "./pages/Verify";
 import ViewURLs, { urlLoader } from "./pages/ViewURLs";
-import Redirect from "./pages/Redirect";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Register />,
-  },
-  {
-    path: "/:identifier",
-    element: <Redirect />,
   },
   {
     path: "/users/activate/:id",

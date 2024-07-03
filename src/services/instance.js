@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3000";
+const baseURL = "https://urlshortener-backend-40am.onrender.com";
 
 const instance = axios.create({
   baseURL,
